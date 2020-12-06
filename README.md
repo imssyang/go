@@ -1,3 +1,18 @@
+# 
+go env           查看环境变量
+go version       查看版本
+go build helloworld.go    编译源码
+go install helloworld.go  安装到GOBIN
+gofmt -w helloworld.go    代码风格格式化
+go doc fmt                查看fmt包的文档注释
+go doc container/list     查看container/list子包的文档注释
+go doc fmt Printf         查看fmt包中Printf函数的文档注释
+godoc -http=:6060         浏览器打开http://localhost:6060查看文档
+go fix helloworld.go      将go代码从旧版本迁移至新版本
+go test helloworld.go     单元测试
+
+
+
 # The Go Programming Language
 
 Go is an open source programming language that makes it easy to build simple,

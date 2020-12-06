@@ -1,4 +1,4 @@
-#!/bin/bash -
+#!/bin/bash
 # https://golang.org/doc/install/source#introduction
 # https://go-zh.org/doc/
 #
@@ -43,8 +43,9 @@
 #go env -w GOBIN=/somewhere/else/bin
 #go env -u GOBIN
 
+export GO_DISABLE_ENV=yes
 export GOROOT=/opt/go
-export GOPATH=$GOROOT/my
+export GOPATH=$GOROOT/app
 export GOBIN=$GOPATH/bin
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
