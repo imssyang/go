@@ -1,0 +1,15 @@
+[Unit]
+Description=The Go Document Server
+After=syslog.target network.target
+Documentation=https://godoc.org
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/bash /opt/go/setup/setup.sh start
+PermissionsStartOnly=true
+PrivateTmp=true
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+
