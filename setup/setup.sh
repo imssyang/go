@@ -23,7 +23,7 @@ deinitialize() {
 godoc_start() {
   pgrep -x godoc >/dev/null
   if [[ $? != 0 ]]; then
-	/opt/$APP/app/bin/godoc -http :8009 &
+	/opt/$APP/app/bin/godoc -http :7000 &
     echo "($APP) godoc start!"
   fi
   godoc_show
