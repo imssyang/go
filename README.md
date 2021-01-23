@@ -1,4 +1,5 @@
 # 
+```
 go env                    查看环境变量
 go version                查看版本
 go build helloworld.go    编译源码
@@ -13,8 +14,7 @@ go test helloworld.go     单元测试
 
 go get gopl.io/ch1/helloworld  自动拉取gopl.io包，然后构建并安装子包helloworld到$GOPATH
 go run helloworld.go           编译helloworld.go源文件，链接库文件，最终生成临时的可执行文件
-
-
+```
 
 # The Go Programming Language
 
