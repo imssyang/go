@@ -49,6 +49,6 @@ export GOPATH=$GOROOT/app
 export GOBIN=$GOPATH/bin
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
-#export GO111MODULE=on
+export GO111MODULE=auto
 #export GOPROXY=https://mirrors.aliyun.com/goproxy/
 
