@@ -1,4 +1,5 @@
-# 
+### Go
+
 ```
 go env                    查看环境变量
 go version                查看版本
@@ -16,51 +17,21 @@ go get gopl.io/ch1/helloworld  自动拉取gopl.io包，然后构建并安装子
 go run helloworld.go           编译helloworld.go源文件，链接库文件，最终生成临时的可执行文件
 ```
 
-# The Go Programming Language
+### Go Modules
 
-Go is an open source programming language that makes it easy to build simple,
-reliable, and efficient software.
+[Why is GO111MODULE everywhere, and everything about Go Modules](https://dev.to/maelvls/why-is-go111module-everywhere-and-everything-about-go-modules-24k)
 
-![Gopher image](doc/gopher/fiveyears.jpg)
-*Gopher image by [Renee French][rf], licensed under [Creative Commons 3.0 Attributions license][cc3-by].*
+```
+go mod init example.com/hello        创建模块，生成go.mod
+go get golang.org/x/text             更新模块到最新版
+go get rsc.io/sampler                更新模块到最新版
+go get rsc.io/sampler@v1.3.1         切换模块的版本
+go list -m all                       列出当前模块以及所有依赖，生成go.sum
+go list -m -versions rsc.io/sampler  列出模块的可用版本
+go list -m rsc.io/q...               列出模块（匹配一部分）
+go test                              测试模块
+go doc rsc.io/quote/v3               查看模块的文档
+go mod tidy                          清理不再使用的模块
+```
 
-Our canonical Git repository is located at https://go.googlesource.com/go.
-There is a mirror of the repository at https://github.com/golang/go.
-
-Unless otherwise noted, the Go source files are distributed under the
-BSD-style license found in the LICENSE file.
-
-### Download and Install
-
-#### Binary Distributions
-
-Official binary distributions are available at https://golang.org/dl/.
-
-After downloading a binary release, visit https://golang.org/doc/install
-or load [doc/install.html](./doc/install.html) in your web browser for installation
-instructions.
-
-#### Install From Source
-
-If a binary distribution is not available for your combination of
-operating system and architecture, visit
-https://golang.org/doc/install/source or load [doc/install-source.html](./doc/install-source.html)
-in your web browser for source installation instructions.
-
-### Contributing
-
-Go is the work of thousands of contributors. We appreciate your help!
-
-To contribute, please read the contribution guidelines:
-	https://golang.org/doc/contribute.html
-
-Note that the Go project uses the issue tracker for bug reports and
-proposals only. See https://golang.org/wiki/Questions for a list of
-places to ask questions about the Go language.
-
-[rf]: https://reneefrench.blogspot.com/
-[cc3-by]: https://creativecommons.org/licenses/by/3.0/
-
-### Workspace
-git clone https://github.com/imssyang/mygo.git my
 
