@@ -34,4 +34,11 @@ go doc rsc.io/quote/v3               查看模块的文档
 go mod tidy                          清理不再使用的模块
 ```
 
+### containerd-cnitool
+
+```
+go get github.com/containernetworking/cni
+go install github.com/containernetworking/cni/cnitool
+```
+
 
