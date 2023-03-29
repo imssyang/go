@@ -23,5 +23,6 @@ export GOBIN=$GOPATH/bin
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 export GO111MODULE=auto
+export GOPROXY=https://goproxy.cn,direct
 #export GOPROXY=https://mirrors.aliyun.com/goproxy/
 

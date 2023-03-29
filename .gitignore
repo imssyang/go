@@ -11,3 +11,4 @@ pkg
 robots.txt
 src
 test
+sample/**/*.sum
