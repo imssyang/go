@@ -12,3 +12,4 @@ robots.txt
 src
 test
 sample/**/*.sum
+!sample/test/
