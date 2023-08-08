@@ -2,41 +2,35 @@ package main
 
 import "fmt"
 
-func main() {
-	// Slice
-	ws := []string{"a", "b", "c"}
-	for i := range ws { // 只迭代index（与for循环性能一致）
-		if i == 1 {
-			// 循环中修改切片，不在当前循环生效
-			ws = append(ws, "d")
-		}
-		fmt.Println(i, ws[i]) // 0 a  1 b  2 c
-	}
-	for i, w := range ws { // 迭代index和value
-		fmt.Println(i, w) // 0 a  1 b  2 c  3 d
-	}
-
-	// Map
-	m := map[string]int{
-		"a": 1,
-		"b": 2,
-		"c": 3,
-	}
-	for k, v := range m {
-		delete(m, "b")               // 迭代过程中，删除还未迭代到的键值对（b和c），则该键值对不会被迭代
-		m["d"] = 4                   // 迭代过程中，新创建的键值对，不一定会被迭代
-		fmt.Printf("%v: %v\n", k, v) // a 1  d 4  c 3
-	}
-
-	// Chan
-	ch := make(chan string)
-	go func() {
-		ch <- "a"
-		ch <- "b"
-		ch <- "c"
-		close(ch)
-	}()
-	for s := range ch {
-		fmt.Println(s) // a  b  c
-	}
+type Person struct {
+	name string
 }
+
+func newPerson(name string) *Person {
+	p := new(Person)
+	p.name = name
+	return p // pointer作为返回值，导致局部变量 p 逃逸到堆上
+}
+
+func printPerson(p *Person) {
+	fmt.Println(p.name) // 函数参数为 interface{} 时，编译期间很难确定其具体类型，会逃逸到堆上
+}
+
+func main() {
+	john := newPerson("John")
+	printPerson(john)
+}
+
+/*
+$ go build -gcflags=-m ./main/c
+# example.com/main/c
+...
+main/c/main.go:9:16: leaking param: name
+main/c/main.go:10:10: new(Person) escapes to heap
+main/c/main.go:15:18: leaking param content: p
+main/c/main.go:16:13: ... argument does not escape
+main/c/main.go:16:15: p.name escapes to heap
+main/c/main.go:20:19: new(Person) does not escape
+main/c/main.go:21:13: ... argument does not escape
+main/c/main.go:21:13: p.name escapes to heap
+*/
