@@ -1,0 +1,27 @@
+<html>
+<script src="wasm_exec.js"></script>
+<script>
+	const go = new Go();
+	WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject)
+		.then((result) => go.run(result.instance));
+</script>
+<body>
+    <div>
+        <input id="num_sync" type="number" />
+        <button id="btn_sync" onclick="ans_sync.innerHTML=syncFib(parseInt(num_sync.value))">Sync</button>
+        <p id="ans_sync">0</p>
+    </div>
+
+    <div>
+        <input id="num_async" type="number" />
+        <button id="btn_async" onclick="asyncFib(parseInt(num_async.value), (v)=> ans_async.innerHTML=v)">Async</button>
+        <p id="ans_async">0</p>
+    </div>
+
+    <div>
+        <input id="num_dom" type="number" />
+        <button id="btn_dom">Dom</button>
+        <p id="ans_dom">0</p>
+    </div>
+</body>
+</html>
