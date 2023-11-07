@@ -5,6 +5,7 @@ archive
 bin
 doc
 favicon.ico
+go.work.sum
 lib
 misc
 pkg
