@@ -17,12 +17,13 @@
 #go env -u GOBIN
 
 export GO_DISABLE_ENV=yes
+export GOPROXY=https://goproxy.cn # QiNiuYun
+#export GOPROXY=https://mirrors.aliyun.com/goproxy/
+export GO111MODULE=on
+export GOOS=linux
+export GOARCH=amd64
 export GOROOT=/opt/go
 export GOPATH=$GOROOT/app
 export GOBIN=$GOPATH/bin
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
-
-export GO111MODULE=auto
-export GOPROXY=https://goproxy.cn,direct
-#export GOPROXY=https://mirrors.aliyun.com/goproxy/
 
