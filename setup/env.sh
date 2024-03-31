@@ -12,6 +12,8 @@
 # GOTOOLDIR="/opt/go/pkg/tool/linux_amd64"
 
 export GOENV_ROOT="/opt/go/goenv"
+export GOENV_GOPATH_PREFIX="/opt/go/gomod"
+export GOENV_GOMOD_VERSION_ENABLE=1
 eval "$(goenv init - zsh)"
 path=($GOROOT/bin $path $GOPATH/bin)
 export GO111MODULE=on
