@@ -1,6 +1,6 @@
 go 1.20
 
-use ./sample/example
-use ./sample/pattern
+use sample/example
+use sample/pattern
 use sample/cgo/lib/dlopen
 use sample/cgo/lib/embed
