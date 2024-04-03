@@ -14,8 +14,10 @@
 export GOENV_ROOT="/opt/go/goenv"
 export GOENV_GOPATH_PREFIX="/opt/go/gomod"
 export GOENV_GOMOD_VERSION_ENABLE=1
-eval "$(goenv init - zsh)"
-path=($GOROOT/bin $path $GOPATH/bin)
+if [[ -f "${GOENV_ROOT:-"$HOMEBREW_PREFIX"}/bin/goenv" ]]; then
+  eval "$(goenv init - zsh)"
+  path=($GOROOT/bin $path $GOPATH/bin)
+fi
 export GO111MODULE=on
 export GOPROXY=https://goproxy.cn # QiNiuYun
 #export GOPROXY=https://mirrors.aliyun.com/goproxy/
