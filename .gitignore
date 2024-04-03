@@ -1,4 +1,4 @@
-# Files of Archive
-app/
+gomod/*
+!gomod/README.md
 sample/**/*.sum
 !sample/test/
