@@ -11,6 +11,8 @@ git config -f .gitmodules submodule.goenv.ignore untracked
 https://github.com/go-nv/goenv.git
 ln -s /opt/go/goenv ~/.goenv
 
+go install -v golang.org/x/tools/gopls@latest  # 安装语言服务器，与VSCode通信
+
 go env                    查看环境变量
 go version                查看版本
 go build helloworld.go    编译源码
