@@ -1,3 +1,10 @@
+# goenv
+
+```bash
+# Ignore untracked content of goenv
+git config -f .gitmodules submodule.goenv.ignore untracked
+```
+
 ### Go
 
 ```
