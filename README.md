@@ -53,4 +53,10 @@ go get github.com/containernetworking/cni
 go install github.com/containernetworking/cni/cnitool
 ```
 
+### checktool
+
+```bash
+go install -v github.com/go-delve/delve/cmd/dlv@latest
+go install -v honnef.co/go/tools/cmd/staticcheck@latest
+```
 
