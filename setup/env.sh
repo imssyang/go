@@ -8,28 +8,24 @@
 # GOMODCACHE="/root/go/pkg/mod"
 # GOPATH="/root/go"
 # GOPROXY="https://proxy.golang.org,direct"
-# GOROOT="/opt/go"
 # GOTOOLDIR="/opt/go/pkg/tool/linux_amd64"
+# GOROOT="/opt/go"
+# GOPATH=$GOROOT/app
+# GOBIN=$GOPATH/bin
+# GOOS=linux
+# GOARCH=amd64
+# GOROOT_BOOTSTRAP=DIR14
+# go env -w GOBIN=/somewhere/else/bin
+# go env -u GOBIN
 
 export GOENV_ROOT="/opt/go/goenv"
 export GOENV_GOPATH_PREFIX="/opt/go/gomod"
 export GOENV_GOMOD_VERSION_ENABLE=1
 if [[ -f "${GOENV_ROOT:-"$HOMEBREW_PREFIX"}/bin/goenv" ]]; then
   eval "$(goenv init - zsh)"
-  path=($GOROOT/bin $path $GOPATH/bin)
+  path=(${GOENV_ROOT}/shims $GOROOT/bin $GOPATH/bin $path)
 fi
 export GO111MODULE=on
 export GOPROXY=https://goproxy.cn # QiNiuYun
 #export GOPROXY=https://mirrors.aliyun.com/goproxy/
-
-#export GOROOT=/opt/go
-#export GOPATH=$GOROOT/app
-#export GOOS=linux
-#export GOARCH=amd64
-#export GOBIN=$GOPATH/bin
-#export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
-#export GOROOT_BOOTSTRAP=DIR14
-#export PATH=$PATH:$(dirname $(go list -f '{{.Target}}' .))
-#go env -w GOBIN=/somewhere/else/bin
-#go env -u GOBIN
 
