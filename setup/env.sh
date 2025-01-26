@@ -19,7 +19,7 @@
 # go env -u GOBIN
 
 export GOENV_ROOT="/opt/go/goenv"
-export GOENV_GOPATH_PREFIX="/opt/go/gomod"
+export GOENV_GOPATH_PREFIX="/opt/go/gopath"
 export GOENV_GOMOD_VERSION_ENABLE=1
 if [[ -f "${GOENV_ROOT:-"$HOMEBREW_PREFIX"}/bin/goenv" ]]; then
   eval "$(goenv init - zsh)"
